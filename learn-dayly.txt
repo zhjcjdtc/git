@@ -1,0 +1,5 @@
+18.12.2:
+搭建GIT环境，在安装完GIT后，要在命令行设置：
+打开git bash
+git config --global user.name "zhonghongjie"
+git config --global user.email "zhjcjdtc@163.com"
