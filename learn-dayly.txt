@@ -8,3 +8,6 @@ git config --global user.email "zhjcjdtc@163.com"
 git commit -m "xxx" 即可提交修改，xxx为注释，可以描述你作了什么修改
 git status可以看仓库当前的状态（看有没有文件被修改），git diff 可以查看具体改了哪些内容（还没被提交的修改）
 git log 可以看历史记录 git log --pretty=oneline 可以简化历史记录
+git reset --hard HEAD^可以回退到上一版本，HEAD^^就是上上个版本，HEAD~100就是上100个版本，HEAD是当前版本
+HEAD^可以用具体的版本号代替，即可回退或者返回最新的版本
+git reflog可以看每一次命令操作，从中可以看到各个操作后的版本号，因此可以任意的回退或返回
