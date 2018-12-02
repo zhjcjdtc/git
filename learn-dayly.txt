@@ -3,3 +3,8 @@
 打开git bash
 git config --global user.name "zhonghongjie"
 git config --global user.email "zhjcjdtc@163.com"
+创建一个库目录，在当前目录下输入：git init即可将这个目录设置成GIT库
+编辑的文件保存在这个库目录的前提下，git add 文件名即可将这个文件添加到GIT库中
+git commit -m "xxx" 即可提交修改，xxx为注释，可以描述你作了什么修改
+git status可以看仓库当前的状态（看有没有文件被修改），git diff 可以查看具体改了哪些内容（还没被提交的修改）
+git log 可以看历史记录 git log --pretty=oneline 可以简化历史记录
