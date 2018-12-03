@@ -44,7 +44,8 @@ GIT支持很多种协议，比如https和ssh，ssh速度较快
 创建并切换到dev分支：git checkout -b dev（-b参数表示创建并切换）相当于：
 git branch dev + git checkout dev
 git branch 可以查看当前分支
-
+在dev分支中的工作完成后并add和commit后，用git checkout master切换到master分支上，再用git merge dev将
+dev分支上的工作成果合并到master分支上。合并完成后，可以用 git branch -d dev删掉dev分支
 
 
 
