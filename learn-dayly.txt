@@ -47,11 +47,36 @@ git branch 可以查看当前分支
 在dev分支中的工作完成后并add和commit后，用git checkout master切换到master分支上，再用git merge dev将
 dev分支上的工作成果合并到master分支上。合并完成后，可以用 git branch -d dev删掉dev分支
 
+18.12.4:
+当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。
+解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。
+用git log --graph命令可以看到分支合并图
+git merge --no-ff -m "merge with no-ff" dev    
+强制禁用Fast forward模式，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息
+合并分支时，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，
+而fast forward合并就看不出来曾经做过合并
+储存工作现场：git stash   查看工作现场：git stash list  
+恢复工作现场：1、git stash apply    和 git stash drop  2、 git stash pop
+你可以多次stash，恢复的时候，先用git stash list查看，然后恢复指定的stash，用命令：
+git stash apply stash@{0}
 
+如果要丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除
 
+查看远程库的信息，用git remote，或者，用git remote -v显示更详细的信息
 
-
-
+多人协作的工作模式通常是这样：
+首先，可以试图用git push origin <branch-name>推送自己的修改；
+如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；
+如果合并有冲突，则解决冲突，并在本地提交；
+没有冲突或者解决掉冲突后，再用git push origin <branch-name>推送就能成功！
+如果git pull提示no tracking information，则说明本地分支和远程分支的链接关系没有创建，
+用命令git branch --set-upstream-to <branch-name> origin/<branch-name>
+在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致
+自己可以模拟一个小伙伴，可以在另一台电脑（注意要把SSH Key添加到GitHub）或者同一台电脑的另一个目录下克隆
+git clone git@github.com:账户名/库名.git，然后还要创建和远程分支对应的分支（master分支是默认创建的，如果有其他
+分支要手动创建）
+rebase操作可以把本地未push的分叉提交历史整理成直线（但是会造成本地的分叉提交已经被修改过了）；git rebase 后再push
+rebase的目的是使得我们在查看历史提交的变化时更容易，因为分叉的提交需要三方对比
 
 
 
