@@ -114,3 +114,21 @@ cat .git/config   可以查看    别名就在[alias]后面，要删除别名，
 搭建Git服务器：需要准备一台运行Linux的机器，推荐用Ubuntu或Debian，输入一系列命令即可
 要方便管理公钥，用Gitosis；
 要像SVN那样变态地控制权限，用Gitolite
+
+
+
+
+
+18.12.6  javascript
+<script>
+    alert('Hello, world');
+</script>            放到head里
+或者<head>
+  <script src="/static/js/abc.js"></script>
+</head>            两种方式均可以执行          //   或/*          */可以写注释
+安装Chrome后，随便打开一个网页，然后点击菜单“查看(View)”-“开发者(Developer)”-“开发者工具(Developer Tools)”，
+浏览器窗口就会一分为二，下方就是开发者工具 先点击“控制台(Console)“，在这个面板里可以直接输入JavaScript代码，按回车后执行。
+要查看一个变量的内容，在Console中输入console.log(a);，回车后显示的值就是变量的内容。
+关闭Console请点击右上角的“×”按钮。请熟练掌握Console的使用方法，在编写JavaScript代码时，经常需要在Console运行测试代码。
+如果你对自己还有更高的要求，可以研究开发者工具的“源码(Sources)”，掌握断点、单步执行等高级调试技巧
+
