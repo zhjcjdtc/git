@@ -151,3 +151,18 @@ python；
 map()函数接收两个参数，一个是函数，一个是Iterable，map将传入的函数依次作用到序列的每个元素，并把结果作为新的Iterator返回
 reduce把一个函数作用在一个序列[x1, x2, x3, ...]上，这个函数必须接收两个参数，reduce把结果继续和序列的下一个元素做累积计算
 reduce()在functools模块里面
+
+18.12.11   mysql
+使用MySQL时，选择InnoDB引擎
+压缩包安装注意事项：
+首先先解压到某一目录，我这里是G:\mysql,然后配置好环境变量：G:\mysql\bin
+然后配置初始化my.ini文件，在mysql文件夹中创建，内容参考my.init
+必须以管理员身份初始化，否则后面root权限登录不了！！！
+初始化：在bin目录下：mysqld --initialize --console，记住它给的初始密码！
+然后再：mysqld -install
+如果之前忘记以管理员身份初始化，则删掉data文件夹下所有文件后再初始化一遍就行
+启动mysql:net start mysql
+然后再：mysql -u root -p 后出现提示后输入初始密码进入mysql
+修改密码:在mysql下ALTER USER "root"@"localhost" IDENTIFIED BY "密码";就可以，分号一定不能
+漏了！不然就会进入一个箭头模式。
+
